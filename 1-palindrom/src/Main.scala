@@ -1,5 +1,3 @@
-package no.bekk
-
 import scala.annotation.tailrec
 
 object Main extends App{

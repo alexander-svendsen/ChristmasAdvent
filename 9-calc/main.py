@@ -5,6 +5,7 @@ possible = [int(''.join(p)) for p in permutations('0123456789', 3) if p[0] != '0
 
 
 def unique(result, num1, num2):
+    
 	
 
 result = 99999

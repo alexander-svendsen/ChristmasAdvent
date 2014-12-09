@@ -1,18 +1,12 @@
-from itertools import permutations
-
-
-possible = [int(''.join(p)) for p in permutations('0123456789', 3) if p[0] != '0']
-
-
+import time
 def is_zero_to_nine(full_string):
     return ''.join(sorted(full_string)) == '0123456789'
 
 
-result = 99999
-for x in possible:
-    for y in possible:
-        sum = str(x + y)
-        if is_zero_to_nine(sum + str(x) + str(y)):
-            result = min(result, x, y)
+def smallest_part():
+    for x in xrange(102, 987):
+        for y in xrange(987, 102, -1):
+            if len(str(x + y)) == 4 and is_zero_to_nine(str(x + y) + str(x) + str(y)):
+                return x
 
-print result
+print smallest_part()
